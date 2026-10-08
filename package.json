@@ -1,0 +1,48 @@
+{
+  "name": "peertrace",
+  "version": "0.1.0",
+  "description": "Share AI agent run logs peer-to-peer: signed, append-only Hypercore logs replicated over Hyperswarm.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "brittle-node test/*.test.js"
+  },
+  "keywords": [
+    "hypercore",
+    "hyperswarm",
+    "p2p",
+    "ai",
+    "agents",
+    "observability",
+    "local-ai"
+  ],
+  "author": "Fernando Garza",
+  "license": "MIT",
+  "dependencies": {
+    "b4a": "^1.9.0",
+    "corestore": "^7.13.0",
+    "hypercore": "^11.37.2",
+    "hyperswarm": "^4.17.2"
+  },
+  "devDependencies": {
+    "brittle": "^4.4.0",
+    "hyperdht": "^6.34.1"
+  },
+  "bin": {
+    "peertrace": "bin/peertrace.js"
+  },
+  "files": [
+    "lib",
+    "bin"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fernandogarzaaa/peertrace.git"
+  },
+  "homepage": "https://github.com/fernandogarzaaa/peertrace#readme",
+  "bugs": {
+    "url": "https://github.com/fernandogarzaaa/peertrace/issues"
+  }
+}
