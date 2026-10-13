@@ -1,6 +1,6 @@
 {
   "name": "peertrace",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Share AI agent run logs peer-to-peer: signed, append-only Hypercore logs replicated over Hyperswarm.",
   "main": "lib/index.js",
   "scripts": {
