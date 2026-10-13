@@ -21,6 +21,8 @@ npx peertrace summary 3f9c...e1
 # { "events": 7, "toolCalls": 2, "errors": 1, "status": "ok", ... }
 ```
 
+`summary` waits up to `--timeout` ms (default 15000) for a peer that holds the run and exits with code 2 if none is reachable, so scripts can tell "no events" from "writer offline". Flags may go before or after the key. `--bootstrap host:port[,host:port]` points any command at a private or local DHT instead of the public one.
+
 ## Library
 
 ```js
@@ -51,7 +53,7 @@ for await (const event of view.tail()) console.log(event)
 npm test
 ```
 
-Ten tests, including:
+Tests include:
 
 - a network partition in the middle of a live tail (20 events written while cut off, then caught up with no gaps or duplicates)
 - five partition and heal cycles converging to the same length
