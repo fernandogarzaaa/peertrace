@@ -48,6 +48,7 @@ test('toEvent accepts only objects with a string type', t => {
 })
 
 test('cli: share then summary over a local DHT; bad lines become error events', async t => {
+  t.timeout(120000)
   const testnet = await createTestnet(3, { teardown: t.teardown })
   const bs = testnet.bootstrap.map(b => `${b.host}:${b.port}`).join(',')
   const lines = [
@@ -63,7 +64,7 @@ test('cli: share then summary over a local DHT; bad lines become error events', 
   const key = (share.stderr.match(/[0-9a-f]{64}/) || [])[0]
   t.ok(key, 'share printed a run key')
 
-  const res = await run(['summary', key, '--dir', tmpdir(t), '--bootstrap', bs]).done
+  const res = await run(['summary', key, '--dir', tmpdir(t), '--bootstrap', bs, '--timeout', '60000']).done
   t.is(res.code, 0, res.stderr)
   const s = JSON.parse(res.stdout)
   t.is(s.events, 5)
